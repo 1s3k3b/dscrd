@@ -1,0 +1,29 @@
+{
+  "name": "dscrd",
+  "version": "0.1.0",
+  "description": "A simple language for making Discord bots",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test:api": "tsc && node dist/test/api",
+    "test:cli": "tsc && dscrd && dscrd test/main.dscrd test/fromDSCRD.js && dscrd test/cli/main.json test/cli/fromJSON.js && dscrd build test/cli/builder.js"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "1s3k3b",
+  "bin": {
+    "dscrd": "./dist/bin/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.5",
+    "@types/ws": "^7.2.4",
+    "discord.js": "^12.2.0",
+    "tslint": "^6.1.2",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.9.2"
+  }
+}

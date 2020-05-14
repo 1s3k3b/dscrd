@@ -1,0 +1,22 @@
+commands
+  command ping
+    aliases pong pingtime
+    run Pong!
+  command foo
+    aliases bar
+    run baz
+  command randomtext
+    aliases randtext
+    run
+      reply(
+          Array
+              .from(
+                  { length: 10 },
+                  () =>
+                      Array.from(
+                          { length: 122 - 65 },
+                          (_, i) => String.fromCharCode(i + 65)
+                      )[~~(Math.random() * (122 - 65))]
+              )
+              .join('')
+      );

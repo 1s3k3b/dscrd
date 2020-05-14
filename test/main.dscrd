@@ -1,0 +1,24 @@
+token AbCs0m3DeF.GhIs3cr3tJkL.MnOt0k3nPqR     # a super secret token
+prefix dsc!                                   # the bot's prefix
+commands                                      # the 'commands' statement
+  command ping                                # the 'ping' command (mind the +1 indentation level)
+    aliases pong pingtime                     # the 'ping' command's aliases, split by spaces (mind the +1 indentation level)
+    run Pong!                                 # the 'ping' command's response, a single word in this case 
+  command foo
+    aliases bar
+    run baz
+  command randomtext
+    aliases randtext
+    run                                       # the 'randtext' command's source (JavaScript)
+      reply(
+          Array
+              .from(
+                  { length: 10 },
+                  () =>
+                      Array.from(
+                          { length: 57 },
+                          (_, i) => String.fromCharCode(i + 65)
+                      )[~~(Math.random() * 57)]
+              )
+              .join('')
+      );

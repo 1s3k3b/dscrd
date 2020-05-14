@@ -1,0 +1,5 @@
+events
+  event ready
+    run
+      console.log('Ready!');
+      client.user.setActivity('with DSCRD');
